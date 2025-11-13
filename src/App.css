@@ -24,9 +24,12 @@
   gap: 10px;
 } */
 
-/* .dlt_btn {
+.dlt-btn {
   background-color: rgb(146, 0, 29);
-} */
+  width: 40px;
+  aspect-ratio: 1;
+  padding: 5px;
+}
 
 .add_player {
   display: flex;
@@ -43,3 +46,39 @@ tr > :nth-child(1) {
   align-items: center;
   justify-content: center;
 }
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap:10px;
+}
+
+.players-list {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.players-list tbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.players-list tbody tr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px #111 solid;
+}
+.players-list tbody tr:nth-child(even) {
+  background-color: #555;
+}
+.players-list tbody tr:nth-child(odd) {
+  background-color: #333;
+}
+
