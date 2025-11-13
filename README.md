@@ -29,8 +29,8 @@ Una aplicación sencilla creada con **React + Vite + Zustand** para llevar el co
 Clona este repositorio y entra en la carpeta del proyecto:
 
 ```bash
-git clone https://github.com/tuusuario/contador-de-puntos.git
-cd contador-de-puntos
+git clone https://github.com/Bruno2204/game-counter
+cd game-counter
 ```
 
 Instala las dependencias e inicia el servidor de desarrollo:
