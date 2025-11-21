@@ -8,6 +8,12 @@
 .players {
   width: 100%;
 }
+.players tr{
+  border-bottom: 3px red  solid;
+}
+.players td {
+  margin: 7px 0px;
+}
 
 .players td:nth-child(2) {
   display: flex;
@@ -15,14 +21,6 @@
   justify-content: center;
   gap: 10px;
 }
-/* 
-.players .btn_cell{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-} */
 
 .dlt-btn {
   background-color: rgb(146, 0, 29);
@@ -73,12 +71,16 @@ tr > :nth-child(1) {
   justify-content: center;
   width: 100%;
   padding: 10px;
-  border-bottom: 1px #111 solid;
 }
-.players-list tbody tr:nth-child(even) {
+
+.striped tbody tr{
+  border-bottom: 1px #111 solid;
+  padding: 2px;
+}
+.striped tbody tr:nth-child(even) {
   background-color: #555;
 }
-.players-list tbody tr:nth-child(odd) {
+.striped tbody tr:nth-child(odd) {
   background-color: #333;
 }
 

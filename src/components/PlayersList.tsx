@@ -1,11 +1,11 @@
-import { useGameStore } from '../players/store/game';
+import { useGameStore } from '../game/store/game';
 
 export function PlayersList() {
   const players = useGameStore((s) => s.players);
   const deletePlayer = useGameStore((s) => s.deletePlayer);
 
   return (
-    <table className='players-list'>
+    <table className='players-list striped'>
       <tbody>
         {players.map((p) => (
           <tr key={p.id}>

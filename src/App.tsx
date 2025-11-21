@@ -1,9 +1,8 @@
 import './App.css';
 import { ControlsSection } from './components/ControlsSection.tsx';
-import { RoundsSection } from './components/RoundsSection.tsx';
-import { PlayersTable } from './components/PlayersTable.tsx';
-import { useGameStore } from './players/store/game.ts';
+import { useGameStore } from './game/store/game.ts';
 import { PlayersList } from './components/PlayersList.tsx';
+import { GameBoard } from './components/GameBoard.tsx';
 
 function App() {
   const gameStarted = useGameStore((s) => s.gameStarted);
@@ -14,11 +13,11 @@ function App() {
         <h1>Contador de Puntos</h1>
       </header>
       <main>
-        <ControlsSection />
         {gameStarted ? (
           <GameBoard />
         ) : (
           <>
+            <ControlsSection />
             <PlayersList />
             <button onClick={changeGameStarted}>Iniciar Juego</button>
           </>
@@ -29,14 +28,5 @@ function App() {
 }
 
 export default App;
-
-export function GameBoard() {
-  return (
-    <>
-      <PlayersTable />
-      <RoundsSection />
-    </>
-  );
-}
 
 

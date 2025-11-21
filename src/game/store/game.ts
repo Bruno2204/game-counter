@@ -8,6 +8,7 @@ type State = {
   lastID: number;
   editPlayers: boolean;
   gameStarted: boolean;
+  turnPlayer: number;
   addPlayer: (name: string) => void;
   deletePlayer: (index: number) => void;
   setPointsForRound: (id: number, points: number) => void;
@@ -28,6 +29,7 @@ export const useGameStore = create(
       players: [],
       editPlayers: false,
       gameStarted: false,
+      turnPlayer: 0,
 
       changeEditPlayers: () =>
         set((state) => ({ editPlayers: !state.editPlayers })),
@@ -81,11 +83,16 @@ export const useGameStore = create(
             newTotals.push(p.totals[state.round]);
             return { ...p, points: newPoints, totals: newTotals };
           }),
+          turnPlayer: (state.turnPlayer + 1) % state.players.length,
         })),
 
       prevRound: () =>
         set((state) => ({
           round: Math.max(state.round - 1, 0),
+          turnPlayer:
+            state.turnPlayer > 0
+              ? state.turnPlayer - 1
+              : state.players.length - 1,
         })),
 
       resetGame: () =>
@@ -96,6 +103,7 @@ export const useGameStore = create(
             totals: [0],
           })),
           round: 0,
+          turnPlayer: 0,
         })),
 
       hardResetGame: () =>
@@ -103,6 +111,7 @@ export const useGameStore = create(
           players: [],
           round: 0,
           lastID: 0,
+          turnPlayer: 0,
         })),
       changePlayerName: (id, name) =>
         set((state) => ({
@@ -120,6 +129,7 @@ export const useGameStore = create(
             totals: [0],
           })),
           round: 0,
+          turnPlayer: 0,
         })),
     }),
     { name: 'game-storage' }
