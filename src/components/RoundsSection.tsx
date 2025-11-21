@@ -19,7 +19,7 @@ export function RoundsSection() {
         <button type='button' onClick={nextRound}>
           {'>'}
         </button>
-        <button onClick={changeGameStarted}>Finalizar juego</button>
+        <button onClick={changeGameStarted}>Finalizar</button>
       </div>
     </section>
   );
